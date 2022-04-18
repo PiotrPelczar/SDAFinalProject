@@ -26,7 +26,7 @@ public class TC {
                 site.findElement(By.id("round-trip")).click();
 
                WebElement returnDate = site.findElement(By.id("return"));
-               Assertions.assertEquals(true, returnDate.isDisplayed());
+               Assertions.assertTrue(returnDate.isDisplayed());
 
              site.close();
 
