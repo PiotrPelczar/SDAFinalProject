@@ -1,0 +1,148 @@
+TS 1. Flight type buttons
+
+Feature: Round trip selection
+
+  Scenario Outline: Displaying RETURN BOX when ROUND TRIP option is selected
+    Given ONE WAY flight option is selected
+    And RETURN DATE box is not available
+    When User selects ROUND TRIP
+    Then RETURN DATE box is displayed
+
+
+
+
+TS 2. ‘Flying From’ search box
+
+
+Feature: Flying from search box
+
+  Scenario Outline: Searching for airport with its name
+    Given User clicks on 'flying from' search box
+    And Box becomes avtice
+    When User types Skvasta in the box
+    Then A dropdown with hints should occur and first hint should be Skvasta, Stockholm, Sweden
+
+
+Feature: Typing airports in 'Flying from' search box
+
+  Scenario Outline: Searching for airport with 3 letter code
+    Given User clicks on 'Flying from' box
+    And User types <code> in the 'Flying from' box
+    When Hints are displayed
+    Then First hint is an airport with <code> code
+
+    Examples:
+      | code   |
+      | JFK    |
+      | WMI    | 
+      | GDN    |
+      | LAX    | 
+
+
+
+
+TS 3. ‘To Destination’ search box
+
+
+Feature: Airport selection in 'To Destination' box
+
+  Scenario Outline: Selecting the same departure and destination airport
+
+    Given User types <airport> in 'Flying from' box
+    And Airport with <airport> code is selected in 'Flying from'
+    When User types <airport> in 'Destination' box
+    And Airport with <airport> code is selected in 'Destination' box
+    And User clicks SEARCH button 
+    Then Search will not start - site will remain on current URL
+
+    Examples:
+      | airport |
+      | LHR     |
+      | MAD     | 
+      | FCO     |
+      | LAX     |
+
+
+
+
+TS 4. ‘Return date’ box
+
+
+Feature: Selecting date from calendar
+
+  Scenario Outline: Selecting the same ‘return date’ as ‘departure date’
+    Given Round Trip option is selected
+    And calendar is opened when deparure date button is clicked
+    And calendar is showing next month's dates after arrow pointing to the right is clicked
+    And Departure Date is set to 15'th 
+    And Return Date calendar is opened
+    When User selects the 15'th day of the month is the Return date calendar
+    Then That date is displayed is Return Date box
+
+
+
+
+TS 5. Number of passangers
+
+Feature: Selecting number of passangers
+
+  Scenario Outline: Adding passangers in the tab
+    Given The user clicks on 'Passangers' button
+    And Passanger adding tab is displayed
+    When User selects a number of <adults> in the tab
+    And User selects a number of <childs> in the tab
+    And User selects a number of <infants> in the tab
+    Then A total of <passangers_total> will be displayed on 'Passangers' button
+
+    Examples:
+      | adults | childs | infants | passangers_toal |
+      | 5      | 0      | 0       | 5               |
+      | 0      | 6      | 0       | 6               |
+      | 0      | 0      | 4       | 4               |
+      | 5      | 5      | 5       | 15              |
+      | 1      | 2      | 3       | 6               |
+
+   
+Feature: Selecting number of passangers
+
+  Scenario Outline: Adding and removing passangers in the tab
+    Given The user clicks on 'Passangers' button
+    And Passanger adding tab is displayed
+    When User selects a number of <adults_added> in the tab
+    And User selects a number of <childs_added> in the tab
+    And User selects a number of <infants_added> in the tab
+    And User removes a number of <adults_removed> in the tab
+    And User removes a number of <childs_removed> in the tab
+    And User removes a number of <infants_removed> in the tab
+    Then A total of <passangers_total> will be displayed on 'Passangers' button
+
+    Examples:
+      | adults_added | childs_added | infants_added |adults_removed | childs_removed | infants_removed |passangers_toal |
+      | 5            | 1            | 4             | 4             | 1              | 4               | 1              |
+      | 4            | 2            | 3             | 0             | 1              | 1               | 7              |
+      | 3            | 3            | 2             | 2             | 2              | 2               | 2              |
+      | 2            | 4            | 1             | 1             | 1              | 0               | 5              |
+
+
+
+
+
+TS 6.  Initiating search
+
+Feature: Initiating search with missing data
+
+  Scenario Outline: Initiating search with 0 passangers (for one way flights)
+    Given 'One way' option for flight is selected
+    And DEN is selected as departure airport
+    And LAX is selected as destination airport
+    And All passangers are removed in passangers tab 
+    And A total of passangers is 0 in passangers button
+    When User clicks on SEARCH button
+    Then Search will not start - site will remain on current URL
+
+
+     
+
+
+
+
