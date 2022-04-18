@@ -1,0 +1,20 @@
+﻿"ID","Title","Assigned To","Case ID","Comment","Defects","Elapsed","Estimate","Forecast","In Progress","Plan","Plan ID","Priority","References","Run","Run Configuration","Run ID","Section","Section Depth","Section Description","Status","Tested By","Tested On","Type","Version"
+"T9","TC 1.1.1 Displaying RETURN DATE box when ROUND TRIP option is selected","Piotr Pelczar","C4","All OK","","8s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 1.1. Round trip button","2","","Passed","Piotr Pelczar","4/17/2022 2:23 PM","Acceptance",""
+"T10","TC 2.1.1. Searching for airport with its name","Piotr Pelczar","C5","All OK","","5s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 2.1. Typing airports","2","","Passed","Piotr Pelczar","4/17/2022 2:24 PM","Acceptance",""
+"T11","TC 2.1.2. Searching for airport with 3 letter code","Piotr Pelczar","C6","All OK","","6s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 2.1. Typing airports","2","","Passed","Piotr Pelczar","4/17/2022 2:25 PM","Acceptance",""
+"T12","TC 3.1.1. Selecting the same airports","Piotr Pelczar","C8","Tested on Windows 10
+Firefox 99.0.1
+
+Site performed search despite of choosing the same departure and destination airports","BUG1","1s","","7s","","","","Medium","","Test Run 4/17/2022","","R2","SC 3.1. Airport selection","2","","Failed","Piotr Pelczar","4/17/2022 2:31 PM","Acceptance",""
+"T24","TC 4.1.1. Selecting the same ‘return date’ as ‘departure date’","Piotr Pelczar","C13","Tested on Windows 10
+Firefox 99.0.1
+
+After picking deparure date for 15-05-2022 I was unable to pick the same date in the return date box
+","BUG2","3s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 4.1. Selecting date from calendar","2","","Failed","Piotr Pelczar","4/17/2022 2:44 PM","Acceptance",""
+"T13","TC 5.1.1. Adding 5 adults and 5 children (total 10)","Piotr Pelczar","C9","All OK ","","9s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 5.1. Selecting number of passangers","2","","Passed","Piotr Pelczar","4/17/2022 2:45 PM","Acceptance",""
+"T14","TC 5.1.2. Adding 4 adults, 3 children, and removing all but 1 adult CHROME","Piotr Pelczar","C10","All ok ","","10s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 5.1. Selecting number of passangers","2","","Passed","Piotr Pelczar","4/17/2022 2:46 PM","Acceptance",""
+"T15","TC 6.1.1. Initializing search with 0 passangers (for one way flights)","Piotr Pelczar","C11","Tested on Windows 10
+Firefox 99.0.1
+
+Followed all steps, the site performed test even though no passangers were picked
+","BUG3","18s","","","","","","Medium","","Test Run 4/17/2022","","R2","SC 6.1. Initiating search with missing data","2","","Failed","Piotr Pelczar","4/17/2022 2:49 PM","Acceptance",""
