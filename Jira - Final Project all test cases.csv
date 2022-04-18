@@ -1,0 +1,118 @@
+Summary,Issue key,Issue id,Parent id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Outward issue link (Blocks),Outward issue link (Relates),Attachment,Custom field (Actual end),Custom field (Actual start),Custom field (Change reason),Custom field (Change risk),Custom field (Change type),Custom field (Development),Custom field (Epic Color),Custom field (Epic Link),Custom field (Epic Name),Custom field (Epic Status),Custom field (Impact),Custom field (Issue color),Custom field (Rank),Custom field (Request Type),Custom field (Start date),Custom field (Story point estimate),Custom field (Target end),Custom field (Target start),Custom field (Team),Custom field ([CHART] Date of First Response),Parent,Parent summary,Status Category
+BUG 3 - Initializing search with 0 passangers (for one way flights),PP-23,10022,,Bug,In Review,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,17/Apr/22 5:24 PM,17/Apr/22 5:33 PM,18/Apr/22 8:31 PM,,,0,"-Went to: [https://www.phptravels.net/flights|https://www.phptravels.net/flights]
+-Select ONE WAY flight from ‘DEN’ to ‘LAX’
+-left date of the flight in its default setting
+-default number of passangers was set to 1 adult
+-Clicked on passanger box, passanger adding dropdown opened 
+-By clicking “-” symbol left from number of adults 1 time, I set the number of passangers to 0
+-Clicked search button
+*SEARCH WAS PREFORMED FOR A TOTAL OF 0 PASSANGERS* ","Tested on Windows 10
+Firefox 99.0.1
+
+Letency median: *19.0 ms*
+
+
+",Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,PP-20,,17/Apr/22 5:24 PM;ug:84e2a3bd-76e7-4634-801a-ddf79726351a;2022-04-17_17h21_12.png;https://projektsda.atlassian.net/secure/attachment/10001/2022-04-17_17h21_12.png,,,,,,{},,,,,,,0|i0004v:,,,,,,,,,,In Progress
+BUG2 Selecting the same ‘return date’ as ‘departure date’,PP-22,10021,,Bug,In Review,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,17/Apr/22 5:11 PM,17/Apr/22 5:33 PM,18/Apr/22 8:33 PM,,,0,"-Went to: [https://www.phptravels.net/flights|https://www.phptravels.net/flights]
+-Clicked ROUND TRIP 
+-Clicked departure date box and selected 15-05-2022 in calendar
+-Return date calendar opened automaticlly
+*THE DATE OF 15-05-2022 WAS UNAVAILABLE IN RETURN DATE CALENDAR*","Tested on Windows 10
+Firefox 99.0.1
+
+Letency median: *19.0 ms*",Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,PP-17,,17/Apr/22 5:11 PM;ug:84e2a3bd-76e7-4634-801a-ddf79726351a;2022-04-17_17h10_40.png;https://projektsda.atlassian.net/secure/attachment/10000/2022-04-17_17h10_40.png,,,,,,{},,,,,,,0|i0004n:,,,,,,,,,,In Progress
+BUG1  Selecting the same airports -,PP-21,10020,,Bug,In Review,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,17/Apr/22 5:03 PM,17/Apr/22 5:33 PM,18/Apr/22 8:26 PM,,,0,"-Went to: [https://www.phptravels.net/flights|https://www.phptravels.net/flights|smart-link] 
+-Selected ROUND TRIP
+-Set BOTH Departure and Destination airports to: ‘JFK’
+-Left all other data in default setting
+-Clicked Search button
+*NO ERROR OCCURRED AND SEARCH WAS PERFORMED* ","Tested on Windows 10
+Firefox 99.0.1
+
+Letency median: *19.0 ms*",Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,PP-16,,,,,,,,{},,,,,,,0|i0004f:,,,,,,,,,,In Progress
+TC 6.1.1. Initializing search with 0 passangers (for one way flights),PP-20,10019,10011,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:36 PM,17/Apr/22 5:32 PM,17/Apr/22 5:32 PM,16/Apr/22 11:54 PM,,0,"Click ONE WAY flight button
+ONE WAY flight button is highlighted
+
+Click on FLYING FROM box
+Coursor appears in the selected box
+
+type ‘DEN’ in the FLYING FROM box
+First hint displayed is „Denver Intl, New York, United States”
+
+Select „Denver Intl, United States” from hints droplist
+„Denver Intl, New York, United States” appears in FLYING FROM box
+
+Click on TO DESTINATION box
+Coursor appears in the selected box
+
+type ‘LAX’ in the DESTINATION TO box 
+First hint displayed is „Los Angeles Intl,, United States”
+
+ Select „Los Angeles Intl, United States” from hints droplist
+„Los Angeles Intl, United States” appears in DESTINATION TO box
+
+Click on DEPARTURE DATE button 
+Calendar is opened
+
+Select tommorow’s date 
+Tommorow’s date days appears in the box
+
+ Click on PASSANGERS button 
+A dropdown with Adults, Children and occures
+
+Make sure that number of adults, children and infants in the tab = 0 and click anywhere on empty field
+Tab is closed and PASSANGER button shows a total of 0 passangers
+
+Click SEARCH button 
+Search should not go through (the site stays at current URL) and information about missing passanger data should occur",,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i00047:,,,,,,,,10011,SC 6.1. Initiating search with missing data,Done
+"TC 5.1.2. Adding 4 adults, 3 children, and removing all but 1 adult CHROME",PP-19,10018,10010,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:35 PM,16/Apr/22 11:54 PM,18/Apr/22 8:36 PM,16/Apr/22 11:54 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0003z:,,,,,,,,10010,SC 5.1. Selecting number of passangers,Done
+TC 5.1.1. Adding 5 adults and 5 children (total 10),PP-18,10017,10010,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:35 PM,16/Apr/22 11:54 PM,18/Apr/22 8:36 PM,16/Apr/22 11:54 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0003r:,,,,,,,,10010,SC 5.1. Selecting number of passangers,Done
+TC 4.1.1. Selecting the same ‘return date’ as ‘departure date’,PP-17,10016,10009,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:35 PM,17/Apr/22 5:26 PM,17/Apr/22 5:26 PM,16/Apr/22 11:54 PM,,0,"Click ROUND TRIP button 
+Round trip option is highlighted and RETURN DATE box is available
+
+Click on DEPARTURE DATE button 
+Calendar is opened
+
+Select next month by clicking arrow pointing to the right
+Calendar is showing next month’s dates
+
+Select 15’th day of the month
+Departure date selected in the box is 15-mm-yyyy, and calendar for RETURN DATE is opened
+
+Select 15’th day of the month in the RETURN DATE calendar (the same date selected before)
+Return date selected in the box is 15-mm-yyyy (the same as departure box)",,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0003j:,,,,,,,,10009,SC 4.1. Selecting date from calendar,Done
+TC 3.1.1. Selecting the same airports,PP-16,10015,10008,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:34 PM,17/Apr/22 5:06 PM,17/Apr/22 5:06 PM,16/Apr/22 11:54 PM,,0,"Click on FLYING FROM box
+Coursor appears in the selected box
+
+type ‘JFK’ in the FLYING FROM box
+First hint displayed is „John F. Kennedy Intl, New York, United States”
+
+Select „John F. Kennedy Intl, New York, United States” from hints droplist
+„John F. Kennedy Intl, New York, United States” appears in FLYING FROM box
+
+Click on TO DESTINATION box
+Coursor appears in the selected box
+
+type ‘JFK’ in the DESTINATION TO box 
+First hint displayed is „John F. Kennedy Intl, New York, United States”
+
+Select „John F. Kennedy Intl, New York, United States” from hints droplist
+„John F. Kennedy Intl, New York, United States” appears in FLYING FROM box
+
+Click on search button
+No search is performed – site stays on current URL. ",,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0003b:,,,,,,,,10008,SC 3.1. Airport selection,Done
+TC 2.1.2. Searching for airport with 3 letter code,PP-15,10014,10007,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:33 PM,16/Apr/22 11:54 PM,18/Apr/22 8:36 PM,16/Apr/22 11:54 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i00033:,,,,,,,,10007,SC 2.1. Typing airports ,Done
+TC 2.1.1. Searching for airport with its name,PP-14,10013,10007,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:33 PM,16/Apr/22 11:54 PM,18/Apr/22 8:36 PM,16/Apr/22 11:54 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0002v:,,,,,,,,10007,SC 2.1. Typing airports ,Done
+TC 1.1.1 Displaying RETURN DATE box when ROUND TRIP option is selected,PP-13,10012,10006,Test Case,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:32 PM,16/Apr/22 11:54 PM,16/Apr/22 11:53 PM,16/Apr/22 11:53 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0002n:,,,,,,,,10006,SC 1.1. Round trip button,Done
+SC 6.1. Initiating search with missing data,PP-12,10011,,Test Scenario,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:28 PM,16/Apr/22 11:55 PM,16/Apr/22 11:36 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,PP-6,,,,,,,{},,,,,,,0|i0002f:,,,,,,,,,,Done
+SC 5.1. Selecting number of passangers,PP-11,10010,,Test Scenario,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:28 PM,16/Apr/22 11:55 PM,16/Apr/22 11:35 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,PP-5,,,,,,,{},,,,,,,0|i00027:,,,,,,,,,,Done
+SC 4.1. Selecting date from calendar,PP-10,10009,,Test Scenario,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:28 PM,16/Apr/22 11:55 PM,16/Apr/22 11:34 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,PP-4,,,,,,,{},,,,,,,0|i0001z:,,,,,,,,,,Done
+SC 3.1. Airport selection,PP-9,10008,,Test Scenario,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:28 PM,16/Apr/22 11:55 PM,16/Apr/22 11:54 PM,16/Apr/22 11:54 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,PP-3,,,,,,,{},,,,,,,0|i0001r:,,,,,,,,,,Done
+SC 2.1. Typing airports ,PP-8,10007,,Test Scenario,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:27 PM,16/Apr/22 11:55 PM,16/Apr/22 11:54 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,PP-2,,,,,,,{},,,,,,,0|i0001j:,,,,,,,,,,Done
+SC 1.1. Round trip button,PP-7,10006,,Test Scenario,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:23 PM,16/Apr/22 11:55 PM,16/Apr/22 11:53 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,PP-1,,,,,,,{},,,,,,,0|i0001b:,,,,,,,,,,Done
+TS 6.  Initiating search,PP-6,10005,,Test Suit,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:16 PM,16/Apr/22 11:55 PM,16/Apr/22 11:36 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i00013:,,,,,,,,,,Done
+TS 5. Number of passangers,PP-5,10004,,Test Suit,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:16 PM,16/Apr/22 11:55 PM,16/Apr/22 11:30 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0000v:,,,,,,,,,,Done
+TS 4. ‘Return date’ box,PP-4,10003,,Test Suit,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:15 PM,16/Apr/22 11:55 PM,16/Apr/22 11:30 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0000n:,,,,,,,,,,Done
+ TS 3. ‘To Destination’ search box,PP-3,10002,,Test Suit,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:15 PM,16/Apr/22 11:55 PM,16/Apr/22 11:30 PM,16/Apr/22 11:54 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i0000f:,,,,,,,,,,Done
+TS 2. ‘Flying From’ search box,PP-2,10001,,Test Suit,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:15 PM,16/Apr/22 11:55 PM,16/Apr/22 11:29 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|i00007:,,,,,,,,,,Done
+TS 1. Flight type buttons,PP-1,10000,,Test Suit,Done,PP,PHPTRAVELS,software,Piotr Pelczar,625b2d7e0630bd0070780932,,Medium,Done,,,Piotr Pelczar,625b2d7e0630bd0070780932,Piotr Pelczar,625b2d7e0630bd0070780932,16/Apr/22 11:15 PM,16/Apr/22 11:55 PM,16/Apr/22 11:29 PM,16/Apr/22 11:55 PM,,0,,,Piotr Pelczar,625b2d7e0630bd0070780932,,,,,,,,,,,,,,,,,{},,,,,,,0|hzzzzz:,,,,,,,,,,Done
