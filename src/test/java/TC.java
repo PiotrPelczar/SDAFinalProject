@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.lang.Thread;
 import java.util.concurrent.TimeUnit;
 
@@ -137,15 +140,20 @@ public class TC {
                 site.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 site.navigate().to("https://www.phptravels.net/flights");
 
-
+                // Click passengers list
                 site.findElement(By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > a > span > span")).click();
 
+                // Wait for passengers list to appear
+                var passengersList = By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > div");
 
+                var wait = new WebDriverWait(site, java.time.Duration.ofSeconds(10));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(passengersList));
 
-                site.findElement(By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > div > div.dropdown-item.adult_qty > div > div > div.qtyInc > i")).click();
-                site.findElement(By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > div > div.dropdown-item.adult_qty > div > div > div.qtyInc > i")).click();
-                site.findElement(By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > div > div.dropdown-item.adult_qty > div > div > div.qtyInc > i")).click();
-                site.findElement(By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > div > div.dropdown-item.adult_qty > div > div > div.qtyInc > i")).click();
+                var awaitedPlusButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("qtyInc")));
+                awaitedPlusButton.click();
+                awaitedPlusButton.click();
+                awaitedPlusButton.click();
+                awaitedPlusButton.click();
 
 
                 site.findElement(By.cssSelector("#onereturn > div.col-lg-1.pr-0 > div > div > div > div > div.dropdown-item.child_qty > div > div > div.qtyInc > i")).click();
