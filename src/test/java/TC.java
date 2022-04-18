@@ -48,9 +48,6 @@ public class TC {
                 site.findElement(By.cssSelector("#autocomplete")).sendKeys("skvasta");
 
                 Assertions.assertEquals("NYO", site.findElement(By.cssSelector("#onereturn > div.col-md-6 > div > div:nth-child(1) > div > div > div > div > div:nth-child(1) > div:nth-child(1) > b")).getText());
-
-
-
         }
 
 
