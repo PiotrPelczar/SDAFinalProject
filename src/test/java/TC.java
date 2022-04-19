@@ -134,8 +134,8 @@ public class TC {
         public void tc5_1_1 (){
                 //Adding 5 adults and 5 children passangers (total 10) - FIREFOX
 
-                System.setProperty("webdriver.gecko.driver", "c:/Chromedriver/geckodriver.exe");
-                WebDriver site = new FirefoxDriver();
+                System.setProperty("webdriver.chrome.driver", "c:/Chromedriver/chromedriver.exe");
+                WebDriver site = new ChromeDriver();
                 site.manage().window().maximize();
                 site.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 site.navigate().to("https://www.phptravels.net/flights");
