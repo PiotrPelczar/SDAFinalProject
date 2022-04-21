@@ -139,10 +139,7 @@ Feature: Initiating search with missing data
     And A total of passangers is 0 in passangers button
     When User clicks on SEARCH button
     Then Search will not start - site will remain on current URL
-
-
-     
-
+   
 
 
 
