@@ -5,7 +5,7 @@ Feature: Round trip selection
   Scenario Outline: Displaying RETURN BOX when ROUND TRIP option is selected
     Given ONE WAY flight option is selected
     And RETURN DATE box is not available
-    When User selects ROUND TRIP
+    When User selects ROUND TRIP radiobutton
     Then RETURN DATE box is displayed
 
 
@@ -14,20 +14,20 @@ Feature: Round trip selection
 TS 2. ‘Flying From’ search box
 
 
-Feature: Flying from search box
+Feature: Flying from search selection box
 
   Scenario Outline: Searching for airport with its name
-    Given User clicks on 'flying from' search box
+    Given User clicks on 'flying from' search selection box
     And Box becomes avtice
-    When User types Skvasta in the box
+    When User types Skvasta in the search selection box
     Then A dropdown with hints should occur and first hint should be Skvasta, Stockholm, Sweden
 
 
-Feature: Typing airports in 'Flying from' search box
+Feature: Typing airports in 'Flying from' search selection box
 
   Scenario Outline: Searching for airport with 3 letter code
-    Given User clicks on 'Flying from' box
-    And User types <code> in the 'Flying from' box
+    Given User clicks on 'Flying from' search selection box
+    And User types <code> in the 'Flying from' search selection box
     When Hints are displayed
     Then First hint is an airport with <code> code
 
@@ -41,19 +41,19 @@ Feature: Typing airports in 'Flying from' search box
 
 
 
-TS 3. ‘To Destination’ search box
+TS 3. ‘To Destination’ search selection box
 
 
-Feature: Airport selection in 'To Destination' box
+Feature: Airport selection in 'To Destination' search selection box
 
   Scenario Outline: Selecting the same departure and destination airport
 
-    Given User types <airport> in 'Flying from' box
-    And Airport with <airport> code is selected in 'Flying from'
-    When User types <airport> in 'Destination' box
-    And Airport with <airport> code is selected in 'Destination' box
+    Given User types <airport> in 'Flying from' search selection box
+    And Airport with <airport> code is selected from droplist
+    When User types <airport> in 'Destination' search selection box
+    And Airport with <airport> code is selected from droplist
     And User clicks SEARCH button 
-    Then Search will not start - site will remain on current URL
+    Then Search will not start - the site will remain on current URL
 
     Examples:
       | airport |
@@ -87,7 +87,7 @@ TS 5. Number of passangers
 Feature: Selecting number of passangers
 
   Scenario Outline: Adding passangers in the tab
-    Given The user clicks on 'Passangers' button
+    Given The user clicks 'Passangers' button
     And Passanger adding tab is displayed
     When User selects a number of <adults> in the tab
     And User selects a number of <childs> in the tab
@@ -106,7 +106,7 @@ Feature: Selecting number of passangers
 Feature: Selecting number of passangers
 
   Scenario Outline: Adding and removing passangers in the tab
-    Given The user clicks on 'Passangers' button
+    Given The user clicks 'Passangers' button
     And Passanger adding tab is displayed
     When User selects a number of <adults_added> in the tab
     And User selects a number of <childs_added> in the tab
@@ -132,14 +132,17 @@ TS 6.  Initiating search
 Feature: Initiating search with missing data
 
   Scenario Outline: Initiating search with 0 passangers (for one way flights)
-    Given 'One way' option for flight is selected
+    Given 'One way' option for flights is selected
     And DEN is selected as departure airport
     And LAX is selected as destination airport
-    And All passangers are removed in passangers tab 
-    And A total of passangers is 0 in passangers button
+    And All passangers are removed from passangers tab 
+    And A total of passangers is 0 in passangers box
     When User clicks on SEARCH button
     Then Search will not start - site will remain on current URL
-   
+
+
+     
+
 
 
 
