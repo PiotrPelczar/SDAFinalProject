@@ -103,6 +103,7 @@ Feature: Selecting number of passangers
       | 1      | 2      | 3       | 6               |
 
    
+
 Feature: Selecting number of passangers
 
   Scenario Outline: Adding and removing passangers in the tab
