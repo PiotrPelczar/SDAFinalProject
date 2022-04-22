@@ -14,21 +14,21 @@ Feature: Round trip selection
 TS 2. ‘Flying From’ search box
 
 
-Feature: Flying from search selection box
+Feature: Flying from box
 
   Scenario Outline: Searching for airport with its name
-    Given User clicks on 'flying from' search selection box
-    And Box becomes avtice
+    Given User clicks on 'flying from' box
+    And Box becomes active
     When User types Skvasta in the search selection box
     Then A dropdown with hints should occur and first hint should be Skvasta, Stockholm, Sweden
 
 
-Feature: Typing airports in 'Flying from' search selection box
+Feature: Typing airports in 'Flying from' box
 
   Scenario Outline: Searching for airport with 3 letter code
-    Given User clicks on 'Flying from' search selection box
-    And User types <code> in the 'Flying from' search selection box
-    When Hints are displayed
+    Given User clicks on 'Flying from' box
+    And User types <code> in the 'Flying from' box
+    When A dropdown with hints is displayed
     Then First hint is an airport with <code> code
 
     Examples:
@@ -41,16 +41,16 @@ Feature: Typing airports in 'Flying from' search selection box
 
 
 
-TS 3. ‘To Destination’ search selection box
+TS 3. ‘To Destination’ box
 
 
-Feature: Airport selection in 'To Destination' search selection box
+Feature: Airport selection in 'To Destination' box
 
   Scenario Outline: Selecting the same departure and destination airport
 
-    Given User types <airport> in 'Flying from' search selection box
+    Given User types <airport> in 'Flying from' box
     And Airport with <airport> code is selected from droplist
-    When User types <airport> in 'Destination' search selection box
+    When User types <airport> in 'Destination' search box
     And Airport with <airport> code is selected from droplist
     And User clicks SEARCH button 
     Then Search will not start - the site will remain on current URL
